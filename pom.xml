@@ -27,6 +27,7 @@
     <sonar.projectKey>java-maven-junit-helloworld</sonar.projectKey>
     <sonar.organization>sam-rowe</sonar.organization>
     <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+    <sonar.login>${SonarToken}</sonar.login>
   </properties>
 
   <dependencies>
