@@ -19,14 +19,15 @@ steps:
     organization: 'sam-rowe'
     scannerMode: 'Other'
 - task: Maven@3
-  displayName: 'Maven pom.xml'
   inputs:
-    mavenPomFile: '$(Parameters.mavenPOMFile)'
-    goals: 'test verify clean package sonar:sonar -DSonarToken=$(SonarToken)'
+    mavenPomFile: 'pom.xml'
+    goals: 'test verify package sonar:sonar -DSonarToken=$(SonarToken)'
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     javaHomeOption: 'JDKVersion'
+    jdkVersionOption: '1.8'
     mavenVersionOption: 'Default'
+    mavenOptions: '-Xmx3072m'
     mavenAuthenticateFeed: false
     effectivePomSkip: false
     sonarQubeRunAnalysis: true
